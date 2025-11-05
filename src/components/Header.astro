@@ -1,5 +1,10 @@
 ---
 // Header con Navbar y Slider para sitio de cabañas
+import { Image } from "astro:assets";
+import headerCabana from "../assets/headerCabana.webp";
+import headerHabitacion from "../assets/headerHabhitacion.webp";
+import headerPileta from "../assets/headerPileta.webp";
+import headerRustico from "../assets/headerRustico.webp";
 ---
 
 <header class="relative">
@@ -22,12 +27,12 @@
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
           <a
-            href="#cabanas"
+            href="/#cabanas"
             class="text-accent-700 hover:text-primary-600 transition-colors font-medium"
             >Cabañas</a
           >
           <a
-            href="#servicios"
+            href="/#servicios"
             class="text-accent-700 hover:text-primary-600 transition-colors font-medium"
             >Servicios</a
           >
@@ -37,12 +42,12 @@
             >Galería</a
           >
           <a
-            href="#contacto"
+            href="/#contacto"
             class="text-accent-700 hover:text-primary-600 transition-colors font-medium"
             >Contacto</a
           >
           <a
-            href="#reservar"
+            href="/#contacto"
             class="bg-primary-500 text-white px-6 py-2 rounded-full hover:bg-primary-600 transition-colors font-medium shadow-md"
           >
             Reservar
@@ -78,12 +83,12 @@
     >
       <div class="px-4 pt-2 pb-4 space-y-2">
         <a
-          href="#cabanas"
+          href="/#cabanas"
           class="block px-3 py-2 text-accent-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-colors font-medium"
           >Cabañas</a
         >
         <a
-          href="#servicios"
+          href="/#servicios"
           class="block px-3 py-2 text-accent-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-colors font-medium"
           >Servicios</a
         >
@@ -93,12 +98,12 @@
           >Galería</a
         >
         <a
-          href="#contacto"
+          href="/#contacto"
           class="block px-3 py-2 text-accent-700 hover:bg-primary-50 hover:text-primary-600 rounded-lg transition-colors font-medium"
           >Contacto</a
         >
         <a
-          href="#reservar"
+          href="/#contacto"
           class="block mx-3 mt-4 px-3 py-2 bg-primary-500 text-white text-center rounded-full hover:bg-primary-600 transition-colors font-medium shadow-md"
         >
           Reservar
@@ -115,12 +120,14 @@
     <div id="slider" class="relative w-full h-full">
       <!-- Slide 1 -->
       <div
-        class="slider-item absolute inset-0 opacity-100 transition-opacity duration-1000"
+        class="slider-item absolute inset-0 opacity-100 transition-opacity duration-1000 pointer-events-auto"
       >
-        <img
-          src="/header.webp"
+        <Image
+          src={headerCabana}
           alt="Cabaña rodeada de naturaleza"
           class="w-full h-full object-cover"
+          widths={[800, 1200, 1920]}
+          sizes="100vw"
         />
         <div class="absolute inset-0 bg-black/50"></div>
         <div
@@ -136,8 +143,9 @@
               Descubre la tranquilidad en nuestras cabañas rodeadas de naturaleza
             </p>
             <a
-              href="#cabanas"
-              class="inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-colors shadow-lg"
+              href="/galeria"
+              class="slide-cta inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-colors shadow-lg"
+              data-href="/galeria"
             >
               Ver Cabañas
             </a>
@@ -147,12 +155,14 @@
 
       <!-- Slide 2 -->
       <div
-        class="slider-item absolute inset-0 opacity-0 transition-opacity duration-1000"
+        class="slider-item absolute inset-0 opacity-0 transition-opacity duration-1000 pointer-events-none"
       >
-        <img
-          src="https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1920&q=80"
-          alt="Interior acogedor de cabaña"
+        <Image
+          src={headerHabitacion}
+          alt="Interior acogedor de habitación"
           class="w-full h-full object-cover"
+          widths={[800, 1200, 1920]}
+          sizes="100vw"
         />
         <div class="absolute inset-0 bg-black/50"></div>
         <div
@@ -168,8 +178,9 @@
               Espacios diseñados para tu descanso y bienestar
             </p>
             <a
-              href="#servicios"
-              class="inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-secondary-500 hover:text-white transition-colors shadow-lg"
+              href="/#servicios"
+              class="slide-cta inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-secondary-500 hover:text-white transition-colors shadow-lg"
+              data-href="/#servicios"
             >
               Nuestros Servicios
             </a>
@@ -179,12 +190,49 @@
 
       <!-- Slide 3 -->
       <div
-        class="slider-item absolute inset-0 opacity-0 transition-opacity duration-1000"
+        class="slider-item absolute inset-0 opacity-0 transition-opacity duration-1000 pointer-events-none"
       >
-        <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-          alt="Vista panorámica de montañas"
+        <Image
+          src={headerPileta}
+          alt="Pileta y áreas de recreación"
           class="w-full h-full object-cover"
+          widths={[800, 1200, 1920]}
+          sizes="100vw"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div
+          class="absolute inset-0 flex items-center justify-center text-center px-4"
+        >
+          <div class="max-w-3xl">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg"
+            >
+              Relájate y Disfruta
+            </h1>
+            <p class="text-lg md:text-xl text-white/90 mb-8 drop-shadow-md">
+              Pileta, parrilla y todas las comodidades para tu descanso
+            </p>
+            <a
+              href="/#contacto"
+              class="slide-cta inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-accent-700 hover:text-white transition-colors shadow-lg"
+              data-href="/#contacto"
+            >
+              Contáctanos
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div
+        class="slider-item absolute inset-0 opacity-0 transition-opacity duration-1000 pointer-events-none"
+      >
+        <Image
+          src={headerRustico}
+          alt="Ambiente rústico y acogedor"
+          class="w-full h-full object-cover"
+          widths={[800, 1200, 1920]}
+          sizes="100vw"
         />
         <div class="absolute inset-0 bg-black/50"></div>
         <div
@@ -197,11 +245,12 @@
               Experiencias Inolvidables
             </h1>
             <p class="text-lg md:text-xl text-white/90 mb-8 drop-shadow-md">
-              Conecta con la naturaleza y crea recuerdos memorables
+              Conecta con la naturaleza y descansa de la rutina
             </p>
             <a
-              href="#contacto"
-              class="inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-accent-700 hover:text-white transition-colors shadow-lg"
+              href="/#contacto"
+              class="slide-cta inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-accent-700 hover:text-white transition-colors shadow-lg"
+              data-href="/#contacto"
             >
               Contáctanos
             </a>
@@ -264,6 +313,10 @@
         class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity"
         data-slide="2"
         aria-label="Ir a slide 3"></button>
+      <button
+        class="slider-dot w-3 h-3 rounded-full bg-white opacity-50 transition-opacity"
+        data-slide="3"
+        aria-label="Ir a slide 4"></button>
     </div>
   </div>
 </header>
@@ -300,11 +353,11 @@
     // Actualizar slides
     slides.forEach((slide, i) => {
       if (i === currentSlide) {
-        slide.classList.remove("opacity-0");
-        slide.classList.add("opacity-100");
+        slide.classList.remove("opacity-0", "pointer-events-none");
+        slide.classList.add("opacity-100", "pointer-events-auto");
       } else {
-        slide.classList.remove("opacity-100");
-        slide.classList.add("opacity-0");
+        slide.classList.remove("opacity-100", "pointer-events-auto");
+        slide.classList.add("opacity-0", "pointer-events-none");
       }
     });
 
@@ -320,6 +373,19 @@
     });
   }
 
+  // Auto-play slider
+  let autoplayInterval = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+
+  // Función para reiniciar el autoplay
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+  }
+
   // Botones de navegación
   const prevButton = document.getElementById("prev-slide");
   const nextButton = document.getElementById("next-slide");
@@ -327,12 +393,14 @@
   if (prevButton) {
     prevButton.addEventListener("click", () => {
       showSlide(currentSlide - 1);
+      resetAutoplay();
     });
   }
 
   if (nextButton) {
     nextButton.addEventListener("click", () => {
       showSlide(currentSlide + 1);
+      resetAutoplay();
     });
   }
 
@@ -342,13 +410,9 @@
       const target = e.target as HTMLElement;
       const slideIndex = parseInt(target.getAttribute("data-slide") || "0");
       showSlide(slideIndex);
+      resetAutoplay();
     });
   });
-
-  // Auto-play slider
-  let autoplayInterval = setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 5000);
 
   // Pausar autoplay cuando el usuario interactúa
   const sliderContainer = document.getElementById("slider");
@@ -368,8 +432,10 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
       showSlide(currentSlide - 1);
+      resetAutoplay();
     } else if (e.key === "ArrowRight") {
       showSlide(currentSlide + 1);
+      resetAutoplay();
     }
   });
 </script>

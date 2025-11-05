@@ -3,103 +3,97 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Contacto from "../components/Contacto.astro";
+import { Image } from "astro:assets";
 
-const cabana1Images = [
-  {
-    url: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=400&q=80",
-    alt: "Cabaña 1 - Exterior",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1470246973918-29a93221c455?w=400&q=80",
-    alt: "Cabaña 1 - Sala",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&q=80",
-    alt: "Cabaña 1 - Habitación",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&q=80",
-    alt: "Cabaña 1 - Cocina",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&q=80",
-    alt: "Cabaña 1 - Baño",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400&q=80",
-    alt: "Cabaña 1 - Deck",
-  },
-];
+// Importar imágenes de cabañas
+import cabana1 from "../assets/galeria/cabaña/IMG_2079.webp";
+import cabana2 from "../assets/galeria/cabaña/IMG_2082.webp";
+import cabana3 from "../assets/galeria/cabaña/IMG_2087.webp";
+import cabana4 from "../assets/galeria/cabaña/IMG_2088.webp";
 
-const cabana2Images = [
-  {
-    url: "https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?w=400&q=80",
-    alt: "Cabaña 2 - Exterior",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&q=80",
-    alt: "Cabaña 2 - Interior",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&q=80",
-    alt: "Cabaña 2 - Habitación Principal",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&q=80",
-    alt: "Cabaña 2 - Zona de estar",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=400&q=80",
-    alt: "Cabaña 2 - Vista desde ventana",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80",
-    alt: "Cabaña 2 - Terraza",
-  },
-];
+// Importar imágenes de comodidades
+import comodidad1 from "../assets/galeria/comodidades/IMG_2045_resultado.webp";
+import comodidad2 from "../assets/galeria/comodidades/IMG_2046_resultado.webp";
+import comodidad3 from "../assets/galeria/comodidades/IMG_2057_resultado.webp";
+import comodidad4 from "../assets/galeria/comodidades/IMG_2061_resultado.webp";
+import comodidad5 from "../assets/galeria/comodidades/IMG_2062_resultado.webp";
+import comodidad6 from "../assets/galeria/comodidades/IMG_2063_resultado.webp";
+import comodidad7 from "../assets/galeria/comodidades/IMG_2064_resultado.webp";
+import comodidad8 from "../assets/galeria/comodidades/IMG_2066_resultado.webp";
+import comodidad9 from "../assets/galeria/comodidades/IMG_2074_resultado.webp";
+import comodidad10 from "../assets/galeria/comodidades/IMG_2076_resultado.webp";
 
-const comodidadesImages = [
+// Galería unificada con todas las imágenes optimizadas
+const galleryImages = [
   {
-    url: "/piletaHome.webp",
-    thumb: "/piletaHome.webp",
-    alt: "Pileta",
+    src: cabana1,
+    alt: "Cabaña - Vista exterior",
+    category: "Cabañas",
   },
   {
-    url: "/parrillaHome.png",
-    thumb: "/parrillaHome.png",
-    alt: "Parrilla y quincho",
+    src: cabana2,
+    alt: "Cabaña - Detalle arquitectónico",
+    category: "Cabañas",
   },
   {
-    url: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80",
-    alt: "Jardín",
+    src: cabana3,
+    alt: "Cabaña - Área común",
+    category: "Cabañas",
   },
   {
-    url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80",
-    alt: "Área común",
+    src: cabana4,
+    alt: "Cabaña - Interior",
+    category: "Cabañas",
   },
   {
-    url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80",
-    alt: "Estacionamiento",
+    src: comodidad1,
+    alt: "Instalaciones y servicios",
+    category: "Comodidades",
   },
   {
-    url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
-    thumb: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80",
-    alt: "Entorno natural",
+    src: comodidad2,
+    alt: "Áreas de recreación",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad3,
+    alt: "Espacios exteriores",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad4,
+    alt: "Zona de descanso",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad5,
+    alt: "Amenidades del complejo",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad6,
+    alt: "Servicios disponibles",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad7,
+    alt: "Áreas comunes",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad8,
+    alt: "Instalaciones recreativas",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad9,
+    alt: "Espacios de convivencia",
+    category: "Comodidades",
+  },
+  {
+    src: comodidad10,
+    alt: "Entorno y naturaleza",
+    category: "Comodidades",
   },
 ];
 ---
@@ -109,34 +103,53 @@ const comodidadesImages = [
 
   <!-- Contenido principal -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Cabaña 1 -->
+    <!-- Galería Unificada -->
     <section
-      id="cabana1"
+      id="galeria"
       class="mb-20 pt-20 md:pt-24"
       style="scroll-margin-top: 5rem;"
     >
       <h2
         class="text-3xl md:text-4xl font-bold text-center text-accent-700 mb-4"
       >
-        Cabaña 1
+        Galería de Fotos
       </h2>
       <p class="text-center text-accent-800 max-w-2xl mx-auto mb-8">
-        Espaciosa y acogedora, perfecta para familias
+        Descubre nuestras cabañas y comodidades
       </p>
 
-      <!-- Slider Principal -->
-      <div class="mb-6">
-        <div class="swiper cabana1-main relative rounded-lg overflow-hidden">
-          <div class="swiper-wrapper">
+      <!-- Contenedor con ancho máximo -->
+      <div class="max-w-4xl mx-auto">
+        <!-- Slider Principal -->
+        <div class="mb-6">
+          <div id="gallery-container" class="swiper gallery-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
+            <!-- Botón de pantalla completa -->
+            <button
+              id="fullscreen-btn"
+              class="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
+              aria-label="Pantalla completa"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </button>
+            
+            <div class="swiper-wrapper">
             {
-              cabana1Images.map((image) => (
+              galleryImages.map((image) => (
                 <div class="swiper-slide">
-                  <img
-                    src={image.url}
+                  <Image
+                    src={image.src}
                     alt={image.alt}
-                    class="w-full h-96 md:h-[500px] object-cover"
-                    loading="lazy"
+                    class="w-full h-full object-cover"
+                    widths={[600, 900, 1200]}
+                    sizes="(max-width: 768px) 100vw, 1200px"
                   />
+                  <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <span class="text-white text-sm font-medium">
+                      {image.category}
+                    </span>
+                  </div>
                 </div>
               ))
             }
@@ -148,137 +161,23 @@ const comodidadesImages = [
       </div>
 
       <!-- Thumbnails -->
-      <div class="swiper cabana1-thumbs">
+      <div class="swiper gallery-thumbs">
         <div class="swiper-wrapper">
           {
-            cabana1Images.map((image) => (
-              <div class="swiper-slide cursor-pointer">
-                <img
-                  src={image.thumb}
+            galleryImages.map((image) => (
+              <div class="swiper-slide cursor-pointer" style="aspect-ratio: 3/2;">
+                <Image
+                  src={image.src}
                   alt={image.alt}
-                  class="w-full h-20 md:h-24 object-cover rounded-lg"
-                  loading="lazy"
+                  class="w-full h-full object-cover rounded-lg"
+                  widths={[150, 200]}
+                  sizes="150px"
                 />
               </div>
             ))
           }
         </div>
       </div>
-    </section>
-
-    <!-- Cabaña 2 -->
-    <section
-      id="cabana2"
-      class="mb-20 pt-20 md:pt-24"
-      style="scroll-margin-top: 5rem;"
-    >
-      <h2
-        class="text-3xl md:text-4xl font-bold text-center text-accent-700 mb-4"
-      >
-        Cabaña 2
-      </h2>
-      <p class="text-center text-accent-800 max-w-2xl mx-auto mb-8">
-        Íntima y romántica, ideal para parejas
-      </p>
-
-      <!-- Slider Principal -->
-      <div class="mb-6">
-        <div class="swiper cabana2-main relative rounded-lg overflow-hidden">
-          <div class="swiper-wrapper">
-            {
-              cabana2Images.map((image) => (
-                <div class="swiper-slide">
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    class="w-full h-96 md:h-[500px] object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              ))
-            }
-          </div>
-          <div class="swiper-button-next !hidden md:!flex"></div>
-          <div class="swiper-button-prev !hidden md:!flex"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Thumbnails -->
-      <div class="swiper cabana2-thumbs">
-        <div class="swiper-wrapper">
-          {
-            cabana2Images.map((image) => (
-              <div class="swiper-slide cursor-pointer">
-                <img
-                  src={image.thumb}
-                  alt={image.alt}
-                  class="w-full h-20 md:h-24 object-cover rounded-lg"
-                  loading="lazy"
-                />
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Comodidades -->
-    <section
-      id="galeria-comodidades"
-      class="mb-20 pt-20 md:pt-24"
-      style="scroll-margin-top: 5rem;"
-    >
-      <h2
-        class="text-3xl md:text-4xl font-bold text-center text-accent-700 mb-4"
-      >
-        Comodidades
-      </h2>
-      <p class="text-center text-accent-800 max-w-2xl mx-auto mb-8">
-        Instalaciones y servicios para tu confort
-      </p>
-
-      <!-- Slider Principal -->
-      <div class="mb-6">
-        <div
-          class="swiper comodidades-main relative rounded-lg overflow-hidden"
-        >
-          <div class="swiper-wrapper">
-            {
-              comodidadesImages.map((image) => (
-                <div class="swiper-slide">
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    class="w-full h-96 md:h-[500px] object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              ))
-            }
-          </div>
-          <div class="swiper-button-next !hidden md:!flex"></div>
-          <div class="swiper-button-prev !hidden md:!flex"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-
-      <!-- Thumbnails -->
-      <div class="swiper comodidades-thumbs">
-        <div class="swiper-wrapper">
-          {
-            comodidadesImages.map((image) => (
-              <div class="swiper-slide cursor-pointer">
-                <img
-                  src={image.thumb}
-                  alt={image.alt}
-                  class="w-full h-20 md:h-24 object-cover rounded-lg"
-                  loading="lazy"
-                />
-              </div>
-            ))
-          }
-        </div>
       </div>
     </section>
 
@@ -287,7 +186,7 @@ const comodidadesImages = [
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="text-white py-8" style="background-color: #4d3124;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <p>&copy; 2025 Apapacho Colón. Todos los derechos reservados.</p>
     </div>
@@ -354,36 +253,112 @@ const comodidadesImages = [
     border-radius: 5px;
   }
 
-  /* Estilo para thumbnails activos */
-  :global(.swiper-slide-thumb-active) {
-    opacity: 1;
-  }
-
-  :global(.swiper-slide-thumb-active img) {
-    opacity: 1;
-    border: 3px solid #d97706;
-    border-radius: 0.5rem;
-  }
-
   /* Thumbnails por defecto - solo aplica a las miniaturas */
-  :global(.cabana1-thumbs .swiper-slide img),
-  :global(.cabana2-thumbs .swiper-slide img),
-  :global(.comodidades-thumbs .swiper-slide img) {
+  :global(.gallery-thumbs .swiper-slide img) {
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }
 
-  :global(.cabana1-thumbs .swiper-slide:hover img),
-  :global(.cabana2-thumbs .swiper-slide:hover img),
-  :global(.comodidades-thumbs .swiper-slide:hover img) {
+  :global(.gallery-thumbs .swiper-slide:hover img) {
     opacity: 1;
   }
 
-  /* Asegurar que las imágenes principales siempre tengan opacidad completa */
-  :global(.cabana1-main .swiper-slide img),
-  :global(.cabana2-main .swiper-slide img),
-  :global(.comodidades-main .swiper-slide img) {
+  /* Estilo para thumbnails activos - sin filtro */
+  :global(.swiper-slide-thumb-active) {
     opacity: 1 !important;
+  }
+
+  :global(.swiper-slide-thumb-active img) {
+    opacity: 1 !important;
+    border: 3px solid #d97706;
+    border-radius: 0.5rem;
+  }
+
+  /* Asegurar que las imágenes principales siempre tengan opacidad completa */
+  :global(.gallery-main .swiper-slide img) {
+    opacity: 1 !important;
+  }
+
+  /* Prevenir selección de imágenes y texto en el slider */
+  :global(.gallery-main) {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  :global(.gallery-main .swiper-slide img) {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  /* Estilos para pantalla completa */
+  :global(#gallery-container:fullscreen) {
+    background: #000;
+    padding: 1rem;
+    aspect-ratio: auto !important;
+    height: 100vh;
+  }
+
+  :global(#gallery-container:fullscreen .swiper) {
+    height: 100%;
+    width: 100%;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-wrapper) {
+    align-items: center;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-slide) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw !important;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-slide-active) {
+    opacity: 1;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-slide-prev),
+  :global(#gallery-container:fullscreen .swiper-slide-next) {
+    opacity: 0.6;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-slide img) {
+    object-fit: contain !important;
+    max-height: 85vh;
+    max-width: 75vw;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Ajuste para desktop en pantalla completa */
+  @media (min-width: 768px) {
+    :global(#gallery-container:fullscreen) {
+      padding: 2rem;
+    }
+
+    :global(#gallery-container:fullscreen .swiper-slide img) {
+      max-width: 80vw;
+    }
+  }
+
+  /* Ocultar thumbnails y categorías en pantalla completa */
+  :global(#gallery-container:fullscreen) ~ .gallery-thumbs {
+    display: none;
+  }
+
+  :global(#gallery-container:fullscreen .swiper-slide > div:last-child) {
+    display: none;
+  }
+
+  /* Cambiar icono del botón en pantalla completa */
+  #fullscreen-btn.fullscreen-active svg {
+    transform: rotate(45deg);
   }
 </style>
 
@@ -391,114 +366,87 @@ const comodidadesImages = [
   import Swiper from "swiper";
   import { Navigation, Pagination, Thumbs } from "swiper/modules";
 
-  // Configuración para Cabaña 1
-  const cabana1Thumbs = new Swiper(".cabana1-thumbs", {
+  // Configuración para la galería unificada
+  const galleryThumbs = new Swiper(".gallery-thumbs", {
     spaceBetween: 10,
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
     breakpoints: {
       640: {
-        slidesPerView: 5,
+        slidesPerView: 6,
       },
       768: {
-        slidesPerView: 6,
+        slidesPerView: 8,
+      },
+      1024: {
+        slidesPerView: 10,
       },
     },
   });
 
-  new Swiper(".cabana1-main", {
+  const mainSwiper = new Swiper(".gallery-main", {
     modules: [Navigation, Pagination, Thumbs],
     spaceBetween: 10,
+    slidesPerView: 1,
+    centeredSlides: true,
     navigation: {
-      nextEl: ".cabana1-main .swiper-button-next",
-      prevEl: ".cabana1-main .swiper-button-prev",
+      nextEl: ".gallery-main .swiper-button-next",
+      prevEl: ".gallery-main .swiper-button-prev",
     },
     pagination: {
-      el: ".cabana1-main .swiper-pagination",
+      el: ".gallery-main .swiper-pagination",
       clickable: true,
       dynamicBullets: true,
     },
     thumbs: {
-      swiper: cabana1Thumbs,
+      swiper: galleryThumbs,
     },
     keyboard: {
       enabled: true,
     },
-    loop: true,
+    loop: false,
   });
 
-  // Configuración para Cabaña 2
-  const cabana2Thumbs = new Swiper(".cabana2-thumbs", {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      640: {
-        slidesPerView: 5,
-      },
-      768: {
-        slidesPerView: 6,
-      },
-    },
-  });
+  // Funcionalidad de pantalla completa
+  const fullscreenBtn = document.getElementById("fullscreen-btn");
+  const galleryContainer = document.getElementById("gallery-container");
 
-  new Swiper(".cabana2-main", {
-    modules: [Navigation, Pagination, Thumbs],
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".cabana2-main .swiper-button-next",
-      prevEl: ".cabana2-main .swiper-button-prev",
-    },
-    pagination: {
-      el: ".cabana2-main .swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    thumbs: {
-      swiper: cabana2Thumbs,
-    },
-    keyboard: {
-      enabled: true,
-    },
-    loop: true,
-  });
+  if (fullscreenBtn && galleryContainer) {
+    fullscreenBtn.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        galleryContainer.requestFullscreen().catch((err) => {
+          console.error("Error al entrar en pantalla completa:", err);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
 
-  // Configuración para Comodidades
-  const comodidadesThumbs = new Swiper(".comodidades-thumbs", {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      640: {
-        slidesPerView: 5,
-      },
-      768: {
-        slidesPerView: 6,
-      },
-    },
-  });
+    // Actualizar el icono y configuración del swiper cuando cambia el estado
+    document.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement) {
+        fullscreenBtn.classList.add("fullscreen-active");
+        // Configurar swiper para pantalla completa
+        mainSwiper.params.slidesPerView = "auto";
+        mainSwiper.params.spaceBetween = 30;
+        mainSwiper.params.centeredSlides = true;
+        mainSwiper.update();
+      } else {
+        fullscreenBtn.classList.remove("fullscreen-active");
+        // Restaurar configuración normal
+        mainSwiper.params.slidesPerView = 1;
+        mainSwiper.params.spaceBetween = 10;
+        mainSwiper.params.centeredSlides = true;
+        mainSwiper.update();
+      }
+    });
 
-  new Swiper(".comodidades-main", {
-    modules: [Navigation, Pagination, Thumbs],
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".comodidades-main .swiper-button-next",
-      prevEl: ".comodidades-main .swiper-button-prev",
-    },
-    pagination: {
-      el: ".comodidades-main .swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    thumbs: {
-      swiper: comodidadesThumbs,
-    },
-    keyboard: {
-      enabled: true,
-    },
-    loop: true,
-  });
+    // Permitir salir de pantalla completa con ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    });
+  }
 </script>

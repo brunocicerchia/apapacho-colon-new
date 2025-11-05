@@ -1,5 +1,8 @@
 ---
 // Sección de comodidades
+import { Image } from "astro:assets";
+import piletaHome from "../assets/piletaHome.webp";
+import parrillaHome from "../assets/parrillaHome.png";
 ---
 
 <section id="comodidades" class="mb-16 pt-20 md:pt-24" style="scroll-margin-top: 5rem;">
@@ -18,10 +21,12 @@
     >
       <div class="flex flex-col md:flex-row md:h-80">
         <div class="md:w-1/2">
-          <img
-            src="/piletaHome.webp"
+          <Image
+            src={piletaHome}
             alt="Pileta"
             class="w-full h-64 md:h-80 object-cover"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
         <div class="md:w-1/2 p-8 flex flex-col justify-center">
@@ -40,10 +45,12 @@
     >
       <div class="flex flex-col md:flex-row-reverse md:h-80">
         <div class="md:w-1/2">
-          <img
-            src="/parrillaHome.png"
+          <Image
+            src={parrillaHome}
             alt="Parrilla"
             class="w-full h-64 md:h-80 object-cover"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
         <div class="md:w-1/2 p-8 flex flex-col justify-center">
