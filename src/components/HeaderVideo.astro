@@ -1,7 +1,6 @@
 ---
 // Header con Navbar y Video de fondo
-import videoBackground from "../assets/videos/video1080_optimizado.webm";
-import videoBackground2 from "../assets/videos/video1080_optimizado.mp4";
+// Los videos deben estar en la carpeta public/videos/
 ---
 
 <header class="relative h-screen">
@@ -120,8 +119,8 @@ import videoBackground2 from "../assets/videos/video1080_optimizado.mp4";
       playsinline
       class="absolute inset-0 w-full h-full object-cover"
     >
-      <source src={videoBackground} type="video/webm" />
-      <source src={videoBackground2} type="video/mp4" />
+      <source src="/videos/video1080_optimizado.webm" type="video/webm" />
+      <source src="/videos/video1080_optimizado.mp4" type="video/mp4" />
     </video>
 
     <!-- Overlay oscuro -->
