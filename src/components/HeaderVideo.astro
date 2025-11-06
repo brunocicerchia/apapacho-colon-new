@@ -1,6 +1,7 @@
 ---
 // Header con Navbar y Video de fondo
-import videoBackground from "../assets/videos/video720_optimizado.webm";
+import videoBackground from "../assets/videos/video1080_optimizado.webm";
+import videoBackground2 from "../assets/videos/video1080_optimizado.mp4";
 ---
 
 <header class="relative h-screen">
@@ -119,8 +120,8 @@ import videoBackground from "../assets/videos/video720_optimizado.webm";
       playsinline
       class="absolute inset-0 w-full h-full object-cover"
     >
-      <source src={videoBackground} type="video/mp4" />
-      Tu navegador no soporta videos HTML5.
+      <source src={videoBackground} type="video/webm" />
+      <source src={videoBackground2} type="video/mp4" />
     </video>
 
     <!-- Overlay oscuro -->
