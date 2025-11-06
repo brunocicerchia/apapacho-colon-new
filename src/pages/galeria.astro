@@ -23,77 +23,67 @@ import comodidad8 from "../assets/galeria/comodidades/IMG_2066_resultado.webp";
 import comodidad9 from "../assets/galeria/comodidades/IMG_2074_resultado.webp";
 import comodidad10 from "../assets/galeria/comodidades/IMG_2076_resultado.webp";
 
-// Galería unificada con todas las imágenes optimizadas
-const galleryImages = [
+// Galería de Cabañas
+const cabanasImages = [
   {
     src: cabana1,
     alt: "Cabaña - Vista exterior",
-    category: "Cabañas",
   },
   {
     src: cabana2,
     alt: "Cabaña - Detalle arquitectónico",
-    category: "Cabañas",
   },
   {
     src: cabana3,
     alt: "Cabaña - Área común",
-    category: "Cabañas",
   },
   {
     src: cabana4,
     alt: "Cabaña - Interior",
-    category: "Cabañas",
   },
+];
+
+// Galería de Comodidades
+const comodidadesImages = [
   {
     src: comodidad1,
     alt: "Instalaciones y servicios",
-    category: "Comodidades",
   },
   {
     src: comodidad2,
     alt: "Áreas de recreación",
-    category: "Comodidades",
   },
   {
     src: comodidad3,
     alt: "Espacios exteriores",
-    category: "Comodidades",
   },
   {
     src: comodidad4,
     alt: "Zona de descanso",
-    category: "Comodidades",
   },
   {
     src: comodidad5,
     alt: "Amenidades del complejo",
-    category: "Comodidades",
   },
   {
     src: comodidad6,
     alt: "Servicios disponibles",
-    category: "Comodidades",
   },
   {
     src: comodidad7,
     alt: "Áreas comunes",
-    category: "Comodidades",
   },
   {
     src: comodidad8,
     alt: "Instalaciones recreativas",
-    category: "Comodidades",
   },
   {
     src: comodidad9,
     alt: "Espacios de convivencia",
-    category: "Comodidades",
   },
   {
     src: comodidad10,
     alt: "Entorno y naturaleza",
-    category: "Comodidades",
   },
 ];
 ---
@@ -103,30 +93,34 @@ const galleryImages = [
 
   <!-- Contenido principal -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Galería Unificada -->
+    <!-- Título General -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-accent-700 mb-4">
+        Galería de Fotos
+      </h1>
+      <p class="text-lg text-accent-800 max-w-2xl mx-auto">
+        Descubre nuestras cabañas y todas las comodidades que ofrecemos
+      </p>
+    </div>
+
+    <!-- Galería de Cabañas -->
     <section
-      id="galeria"
-      class="mb-20 pt-20 md:pt-24"
+      id="galeria-cabanas"
+      class="mb-20"
       style="scroll-margin-top: 5rem;"
     >
-      <h2
-        class="text-3xl md:text-4xl font-bold text-center text-accent-700 mb-4"
-      >
-        Galería de Fotos
+      <h2 class="text-3xl md:text-4xl font-bold text-accent-700 mb-8">
+        Cabañas
       </h2>
-      <p class="text-center text-accent-800 max-w-2xl mx-auto mb-8">
-        Descubre nuestras cabañas y comodidades
-      </p>
 
       <!-- Contenedor con ancho máximo -->
       <div class="max-w-4xl mx-auto">
-        <!-- Slider Principal -->
+        <!-- Slider Principal de Cabañas -->
         <div class="mb-6">
-          <div id="gallery-container" class="swiper gallery-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
+          <div id="gallery-cabanas-container" class="swiper gallery-cabanas-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
             <!-- Botón de pantalla completa -->
             <button
-              id="fullscreen-btn"
-              class="absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
+              class="fullscreen-btn-cabanas absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
               aria-label="Pantalla completa"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +130,7 @@ const galleryImages = [
             
             <div class="swiper-wrapper">
             {
-              galleryImages.map((image) => (
+              cabanasImages.map((image) => (
                 <div class="swiper-slide">
                   <Image
                     src={image.src}
@@ -145,11 +139,6 @@ const galleryImages = [
                     widths={[600, 900, 1200]}
                     sizes="(max-width: 768px) 100vw, 1200px"
                   />
-                  <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <span class="text-white text-sm font-medium">
-                      {image.category}
-                    </span>
-                  </div>
                 </div>
               ))
             }
@@ -160,11 +149,78 @@ const galleryImages = [
         </div>
       </div>
 
-      <!-- Thumbnails -->
-      <div class="swiper gallery-thumbs">
+      <!-- Thumbnails de Cabañas -->
+      <div class="swiper gallery-cabanas-thumbs">
         <div class="swiper-wrapper">
           {
-            galleryImages.map((image) => (
+            cabanasImages.map((image) => (
+              <div class="swiper-slide cursor-pointer" style="aspect-ratio: 3/2;">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  class="w-full h-full object-cover rounded-lg"
+                  widths={[150, 200]}
+                  sizes="150px"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Galería de Comodidades -->
+    <section
+      id="galeria-comodidades"
+      class="mb-20"
+      style="scroll-margin-top: 5rem;"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold text-accent-700 mb-8">
+        Comodidades
+      </h2>
+
+      <!-- Contenedor con ancho máximo -->
+      <div class="max-w-4xl mx-auto">
+        <!-- Slider Principal de Comodidades -->
+        <div class="mb-6">
+          <div id="gallery-comodidades-container" class="swiper gallery-comodidades-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
+            <!-- Botón de pantalla completa -->
+            <button
+              class="fullscreen-btn-comodidades absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
+              aria-label="Pantalla completa"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </button>
+            
+            <div class="swiper-wrapper">
+            {
+              comodidadesImages.map((image) => (
+                <div class="swiper-slide">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    class="w-full h-full object-cover"
+                    widths={[600, 900, 1200]}
+                    sizes="(max-width: 768px) 100vw, 1200px"
+                  />
+                </div>
+              ))
+            }
+          </div>
+          <div class="swiper-button-next !hidden md:!flex"></div>
+          <div class="swiper-button-prev !hidden md:!flex"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- Thumbnails de Comodidades -->
+      <div class="swiper gallery-comodidades-thumbs">
+        <div class="swiper-wrapper">
+          {
+            comodidadesImages.map((image) => (
               <div class="swiper-slide cursor-pointer" style="aspect-ratio: 3/2;">
                 <Image
                   src={image.src}
@@ -254,12 +310,14 @@ const galleryImages = [
   }
 
   /* Thumbnails por defecto - solo aplica a las miniaturas */
-  :global(.gallery-thumbs .swiper-slide img) {
+  :global(.gallery-cabanas-thumbs .swiper-slide img),
+  :global(.gallery-comodidades-thumbs .swiper-slide img) {
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }
 
-  :global(.gallery-thumbs .swiper-slide:hover img) {
+  :global(.gallery-cabanas-thumbs .swiper-slide:hover img),
+  :global(.gallery-comodidades-thumbs .swiper-slide:hover img) {
     opacity: 1;
   }
 
@@ -275,42 +333,49 @@ const galleryImages = [
   }
 
   /* Asegurar que las imágenes principales siempre tengan opacidad completa */
-  :global(.gallery-main .swiper-slide img) {
+  :global(.gallery-cabanas-main .swiper-slide img),
+  :global(.gallery-comodidades-main .swiper-slide img) {
     opacity: 1 !important;
   }
 
   /* Prevenir selección de imágenes y texto en el slider */
-  :global(.gallery-main) {
+  :global(.gallery-cabanas-main),
+  :global(.gallery-comodidades-main) {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
   }
 
-  :global(.gallery-main .swiper-slide img) {
+  :global(.gallery-cabanas-main .swiper-slide img),
+  :global(.gallery-comodidades-main .swiper-slide img) {
     pointer-events: none;
     -webkit-user-drag: none;
     user-drag: none;
   }
 
   /* Estilos para pantalla completa */
-  :global(#gallery-container:fullscreen) {
+  :global(#gallery-cabanas-container:fullscreen),
+  :global(#gallery-comodidades-container:fullscreen) {
     background: #000;
     padding: 1rem;
     aspect-ratio: auto !important;
     height: 100vh;
   }
 
-  :global(#gallery-container:fullscreen .swiper) {
+  :global(#gallery-cabanas-container:fullscreen .swiper),
+  :global(#gallery-comodidades-container:fullscreen .swiper) {
     height: 100%;
     width: 100%;
   }
 
-  :global(#gallery-container:fullscreen .swiper-wrapper) {
+  :global(#gallery-cabanas-container:fullscreen .swiper-wrapper),
+  :global(#gallery-comodidades-container:fullscreen .swiper-wrapper) {
     align-items: center;
   }
 
-  :global(#gallery-container:fullscreen .swiper-slide) {
+  :global(#gallery-cabanas-container:fullscreen .swiper-slide),
+  :global(#gallery-comodidades-container:fullscreen .swiper-slide) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,16 +384,20 @@ const galleryImages = [
     transition: opacity 0.3s ease;
   }
 
-  :global(#gallery-container:fullscreen .swiper-slide-active) {
+  :global(#gallery-cabanas-container:fullscreen .swiper-slide-active),
+  :global(#gallery-comodidades-container:fullscreen .swiper-slide-active) {
     opacity: 1;
   }
 
-  :global(#gallery-container:fullscreen .swiper-slide-prev),
-  :global(#gallery-container:fullscreen .swiper-slide-next) {
+  :global(#gallery-cabanas-container:fullscreen .swiper-slide-prev),
+  :global(#gallery-cabanas-container:fullscreen .swiper-slide-next),
+  :global(#gallery-comodidades-container:fullscreen .swiper-slide-prev),
+  :global(#gallery-comodidades-container:fullscreen .swiper-slide-next) {
     opacity: 0.6;
   }
 
-  :global(#gallery-container:fullscreen .swiper-slide img) {
+  :global(#gallery-cabanas-container:fullscreen .swiper-slide img),
+  :global(#gallery-comodidades-container:fullscreen .swiper-slide img) {
     object-fit: contain !important;
     max-height: 85vh;
     max-width: 75vw;
@@ -338,26 +407,26 @@ const galleryImages = [
 
   /* Ajuste para desktop en pantalla completa */
   @media (min-width: 768px) {
-    :global(#gallery-container:fullscreen) {
+    :global(#gallery-cabanas-container:fullscreen),
+    :global(#gallery-comodidades-container:fullscreen) {
       padding: 2rem;
     }
 
-    :global(#gallery-container:fullscreen .swiper-slide img) {
+    :global(#gallery-cabanas-container:fullscreen .swiper-slide img),
+    :global(#gallery-comodidades-container:fullscreen .swiper-slide img) {
       max-width: 80vw;
     }
   }
 
-  /* Ocultar thumbnails y categorías en pantalla completa */
-  :global(#gallery-container:fullscreen) ~ .gallery-thumbs {
-    display: none;
-  }
-
-  :global(#gallery-container:fullscreen .swiper-slide > div:last-child) {
+  /* Ocultar thumbnails en pantalla completa */
+  :global(#gallery-cabanas-container:fullscreen) ~ .gallery-cabanas-thumbs,
+  :global(#gallery-comodidades-container:fullscreen) ~ .gallery-comodidades-thumbs {
     display: none;
   }
 
   /* Cambiar icono del botón en pantalla completa */
-  #fullscreen-btn.fullscreen-active svg {
+  .fullscreen-btn-cabanas.fullscreen-active svg,
+  .fullscreen-btn-comodidades.fullscreen-active svg {
     transform: rotate(45deg);
   }
 </style>
@@ -366,8 +435,8 @@ const galleryImages = [
   import Swiper from "swiper";
   import { Navigation, Pagination, Thumbs } from "swiper/modules";
 
-  // Configuración para la galería unificada
-  const galleryThumbs = new Swiper(".gallery-thumbs", {
+  // ========== GALERÍA DE CABAÑAS ==========
+  const cabanasGalleryThumbs = new Swiper(".gallery-cabanas-thumbs", {
     spaceBetween: 10,
     slidesPerView: 4,
     freeMode: true,
@@ -385,22 +454,22 @@ const galleryImages = [
     },
   });
 
-  const mainSwiper = new Swiper(".gallery-main", {
+  const cabanasMainSwiper = new Swiper(".gallery-cabanas-main", {
     modules: [Navigation, Pagination, Thumbs],
     spaceBetween: 10,
     slidesPerView: 1,
     centeredSlides: true,
     navigation: {
-      nextEl: ".gallery-main .swiper-button-next",
-      prevEl: ".gallery-main .swiper-button-prev",
+      nextEl: ".gallery-cabanas-main .swiper-button-next",
+      prevEl: ".gallery-cabanas-main .swiper-button-prev",
     },
     pagination: {
-      el: ".gallery-main .swiper-pagination",
+      el: ".gallery-cabanas-main .swiper-pagination",
       clickable: true,
       dynamicBullets: true,
     },
     thumbs: {
-      swiper: galleryThumbs,
+      swiper: cabanasGalleryThumbs,
     },
     keyboard: {
       enabled: true,
@@ -408,14 +477,14 @@ const galleryImages = [
     loop: false,
   });
 
-  // Funcionalidad de pantalla completa
-  const fullscreenBtn = document.getElementById("fullscreen-btn");
-  const galleryContainer = document.getElementById("gallery-container");
+  // Funcionalidad de pantalla completa para Cabañas
+  const fullscreenBtnCabanas = document.querySelector(".fullscreen-btn-cabanas");
+  const galleryContainerCabanas = document.getElementById("gallery-cabanas-container");
 
-  if (fullscreenBtn && galleryContainer) {
-    fullscreenBtn.addEventListener("click", () => {
+  if (fullscreenBtnCabanas && galleryContainerCabanas) {
+    fullscreenBtnCabanas.addEventListener("click", () => {
       if (!document.fullscreenElement) {
-        galleryContainer.requestFullscreen().catch((err) => {
+        galleryContainerCabanas.requestFullscreen().catch((err) => {
           console.error("Error al entrar en pantalla completa:", err);
         });
       } else {
@@ -423,30 +492,101 @@ const galleryImages = [
       }
     });
 
-    // Actualizar el icono y configuración del swiper cuando cambia el estado
     document.addEventListener("fullscreenchange", () => {
-      if (document.fullscreenElement) {
-        fullscreenBtn.classList.add("fullscreen-active");
-        // Configurar swiper para pantalla completa
-        mainSwiper.params.slidesPerView = "auto";
-        mainSwiper.params.spaceBetween = 30;
-        mainSwiper.params.centeredSlides = true;
-        mainSwiper.update();
-      } else {
-        fullscreenBtn.classList.remove("fullscreen-active");
-        // Restaurar configuración normal
-        mainSwiper.params.slidesPerView = 1;
-        mainSwiper.params.spaceBetween = 10;
-        mainSwiper.params.centeredSlides = true;
-        mainSwiper.update();
-      }
-    });
-
-    // Permitir salir de pantalla completa con ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && document.fullscreenElement) {
-        document.exitFullscreen();
+      if (document.fullscreenElement === galleryContainerCabanas) {
+        fullscreenBtnCabanas.classList.add("fullscreen-active");
+        cabanasMainSwiper.params.slidesPerView = "auto";
+        cabanasMainSwiper.params.spaceBetween = 30;
+        cabanasMainSwiper.params.centeredSlides = true;
+        cabanasMainSwiper.update();
+      } else if (!document.fullscreenElement) {
+        fullscreenBtnCabanas.classList.remove("fullscreen-active");
+        cabanasMainSwiper.params.slidesPerView = 1;
+        cabanasMainSwiper.params.spaceBetween = 10;
+        cabanasMainSwiper.params.centeredSlides = true;
+        cabanasMainSwiper.update();
       }
     });
   }
+
+  // ========== GALERÍA DE COMODIDADES ==========
+  const comodidadesGalleryThumbs = new Swiper(".gallery-comodidades-thumbs", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      640: {
+        slidesPerView: 6,
+      },
+      768: {
+        slidesPerView: 8,
+      },
+      1024: {
+        slidesPerView: 10,
+      },
+    },
+  });
+
+  const comodidadesMainSwiper = new Swiper(".gallery-comodidades-main", {
+    modules: [Navigation, Pagination, Thumbs],
+    spaceBetween: 10,
+    slidesPerView: 1,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".gallery-comodidades-main .swiper-button-next",
+      prevEl: ".gallery-comodidades-main .swiper-button-prev",
+    },
+    pagination: {
+      el: ".gallery-comodidades-main .swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    thumbs: {
+      swiper: comodidadesGalleryThumbs,
+    },
+    keyboard: {
+      enabled: true,
+    },
+    loop: false,
+  });
+
+  // Funcionalidad de pantalla completa para Comodidades
+  const fullscreenBtnComodidades = document.querySelector(".fullscreen-btn-comodidades");
+  const galleryContainerComodidades = document.getElementById("gallery-comodidades-container");
+
+  if (fullscreenBtnComodidades && galleryContainerComodidades) {
+    fullscreenBtnComodidades.addEventListener("click", () => {
+      if (!document.fullscreenElement) {
+        galleryContainerComodidades.requestFullscreen().catch((err) => {
+          console.error("Error al entrar en pantalla completa:", err);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement === galleryContainerComodidades) {
+        fullscreenBtnComodidades.classList.add("fullscreen-active");
+        comodidadesMainSwiper.params.slidesPerView = "auto";
+        comodidadesMainSwiper.params.spaceBetween = 30;
+        comodidadesMainSwiper.params.centeredSlides = true;
+        comodidadesMainSwiper.update();
+      } else if (!document.fullscreenElement) {
+        fullscreenBtnComodidades.classList.remove("fullscreen-active");
+        comodidadesMainSwiper.params.slidesPerView = 1;
+        comodidadesMainSwiper.params.spaceBetween = 10;
+        comodidadesMainSwiper.params.centeredSlides = true;
+        comodidadesMainSwiper.update();
+      }
+    });
+  }
+
+  // Permitir salir de pantalla completa con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  });
 </script>
