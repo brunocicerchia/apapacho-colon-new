@@ -7,7 +7,7 @@
   <!-- Navbar Transparente -->
   <nav
     id="navbar"
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/30 backdrop-blur-md md:bg-transparent md:backdrop-blur-none"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16 md:h-20">
@@ -45,7 +45,7 @@
           >
           <a
             href="/#contacto"
-            class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/30 transition-colors font-medium shadow-lg border-2 border-white"
+            class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/30 transition-colors font-medium shadow-lg border-2 border-white open-reservation-modal"
           >
             Reservar
           </a>
@@ -54,7 +54,7 @@
         <!-- Mobile Menu Button -->
         <button
           id="mobile-menu-button"
-          class="md:hidden text-white hover:text-neutral-100 focus:outline-none"
+          class="md:hidden focus:outline-none"
           aria-label="Abrir menú"
         >
           <svg
@@ -76,32 +76,32 @@
     <!-- Mobile Menu -->
     <div
       id="mobile-menu"
-      class="hidden md:hidden bg-black/90 backdrop-blur-md border-t border-white/20"
+      class="hidden md:hidden bg-white/20 backdrop-blur-lg border-t border-white/20"
     >
       <div class="px-4 pt-2 pb-4 space-y-2">
         <a
           href="/#cabanas"
-          class="block px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          class="block px-3 py-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
           >Cabañas</a
         >
         <a
           href="/#servicios"
-          class="block px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          class="block px-3 py-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
           >Servicios</a
         >
         <a
           href="/galeria#galery"
-          class="block px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          class="block px-3 py-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
           >Galería</a
         >
         <a
           href="/#contacto"
-          class="block px-3 py-2 text-white hover:bg-white/10 rounded-lg transition-colors font-medium"
+          class="block px-3 py-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
           >Contacto</a
         >
         <a
           href="/#contacto"
-          class="block mx-3 mt-4 px-3 py-2 bg-white/20 backdrop-blur-sm text-white text-center rounded-full hover:bg-white/30 transition-colors font-medium shadow-lg border-2 border-white"
+          class="block mx-3 mt-4 px-3 py-2 text-center rounded-full transition-colors font-medium shadow-lg open-reservation-modal"
         >
           Reservar
         </a>
@@ -142,17 +142,16 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/galeria"
+            href="/galeria#galery"
             class="inline-block bg-neutral-100 text-accent-700 px-8 py-3 rounded-full font-semibold hover:bg-primary-500 hover:text-white transition-colors shadow-lg"
           >
             Ver Cabañas
           </a>
-          <a
-            href="/#contacto"
-            class="inline-block bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors shadow-lg border-2 border-white"
+          <button
+            class="inline-block bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors shadow-lg border-2 border-white open-reservation-modal"
           >
             Reservar Ahora
-          </a>
+          </button>
         </div>
       </div>
     </div>
@@ -166,7 +165,171 @@
   </div>
 </header>
 
+<!-- Modal de Reserva -->
+<div id="reservation-modal" class="fixed inset-0 z-[100] hidden">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="modal-overlay"></div>
+  
+  <!-- Modal Content -->
+  <div class="absolute inset-0 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative animate-fade-in">
+      <!-- Close Button -->
+      <button
+        id="close-modal"
+        class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors z-10"
+        aria-label="Cerrar modal"
+      >
+        <svg class="w-6 h-6 text-accent-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-6 rounded-t-3xl">
+        <h2 class="text-2xl md:text-3xl font-bold mb-1">¡Reserva tu Escapada!</h2>
+        <p class="text-white/90 text-sm">Contactanos por WhatsApp para planificar tu estadía</p>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6">
+        <!-- Info Cards -->
+        <div class="grid md:grid-cols-2 gap-3 mb-6">
+          <div class="bg-primary-50 rounded-xl p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-accent-700 text-sm">Check-in Flexible</h3>
+                <p class="text-xs text-accent-600">Coordina tu llegada</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-secondary-50 rounded-xl p-4">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-10 h-10 bg-secondary-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-accent-700 text-sm">Respuesta Rápida</h3>
+                <p class="text-xs text-accent-600">Atención inmediata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Buttons -->
+        <div class="space-y-3 mb-4">
+          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border-2 border-green-200">
+            <p class="text-accent-700 font-semibold mb-2 text-center text-sm">Contacta a Juan</p>
+            <a
+              href="https://wa.me/5491127670365?text=¡Hola!%20👋%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Caba%C3%B1as%20Apapacho"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 w-full"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span>Abrir WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border-2 border-green-200">
+            <p class="text-accent-700 font-semibold mb-2 text-center text-sm">Contacta a Adriana</p>
+            <a
+              href="https://wa.me/5493489594277?text=¡Hola!%20👋%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Caba%C3%B1as%20Apapacho"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 w-full"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span>Abrir WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="bg-neutral-50 rounded-xl p-4 text-center">
+          <p class="text-accent-700 text-xs mb-1">
+            <span class="font-semibold">💚 Atención personalizada</span>
+          </p>
+          <p class="text-accent-600 text-xs">
+            Te responderemos lo antes posible
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
+
 <script>
+  // Modal functionality
+  const modal = document.getElementById("reservation-modal");
+  const modalOverlay = document.getElementById("modal-overlay");
+  const closeModalBtn = document.getElementById("close-modal");
+  const openModalButtons = document.querySelectorAll(".open-reservation-modal");
+
+  function openModal(e: Event) {
+    e.preventDefault();
+    if (modal) {
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+  }
+
+  // Open modal
+  openModalButtons.forEach(button => {
+    button.addEventListener("click", openModal);
+  });
+
+  // Close modal
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", closeModal);
+  }
+  
+  if (modalOverlay) {
+    modalOverlay.addEventListener("click", closeModal);
+  }
+
+  // Close with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+
   // Mobile Menu Toggle
   const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -187,54 +350,103 @@
 
   // Navbar scroll effect
   const navbar = document.getElementById("navbar");
+  const mobileMenuDiv = document.getElementById("mobile-menu");
   
-  if (navbar) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+  if (navbar && mobileMenuDiv && mobileMenuButton) {
+    const updateNavbarStyles = () => {
+      const isScrolled = window.scrollY > 100;
+      
+      if (isScrolled) {
+        navbar.classList.remove("bg-black/30", "backdrop-blur-md", "md:bg-transparent", "md:backdrop-blur-none");
         navbar.classList.add("bg-neutral-50/95", "backdrop-blur-sm", "shadow-md");
+        mobileMenuDiv.classList.remove("bg-white/20", "backdrop-blur-lg", "border-white/20");
+        mobileMenuDiv.classList.add("bg-neutral-50/95", "backdrop-blur-sm", "border-t", "border-neutral-200");
+        
+        // Cambiar color del botón móvil
+        mobileMenuButton.classList.remove("text-white", "hover:text-neutral-100");
+        mobileMenuButton.classList.add("text-accent-700", "hover:text-primary-600");
+        
         // Cambiar colores del navbar cuando tiene fondo
         const logo = navbar.querySelector("a[href='/']");
-        const links = navbar.querySelectorAll("a:not([href='/'])");
+        const desktopLinks = navbar.querySelectorAll(".hidden.md\\:flex a");
+        const mobileLinks = mobileMenuDiv.querySelectorAll("a");
         
         if (logo) {
           logo.classList.remove("text-white", "hover:text-neutral-100");
           logo.classList.add("text-accent-700", "hover:text-primary-600");
         }
         
-        links.forEach((link) => {
+        desktopLinks.forEach((link) => {
           if (link.classList.contains("border-white")) {
-            // Botón de reservar
             link.classList.remove("bg-white/20", "border-white", "text-white", "hover:bg-white/30");
-            link.classList.add("bg-primary-500", "hover:bg-primary-600");
+            link.classList.add("bg-primary-500", "hover:bg-primary-600", "text-white", "border-primary-500");
           } else {
-            // Links normales
             link.classList.remove("text-white", "hover:text-neutral-100");
             link.classList.add("text-accent-700", "hover:text-primary-600");
           }
         });
+        
+        // Cambiar colores del menú móvil
+        mobileLinks.forEach((link, index) => {
+          if (index === mobileLinks.length - 1) {
+            // Botón de reservar
+            link.classList.remove("bg-white/20", "border-white", "text-white", "hover:bg-white/30");
+            link.classList.add("bg-primary-500", "hover:bg-primary-600", "text-white", "border-2", "border-primary-500");
+          } else {
+            // Links normales
+            link.classList.remove("text-white");
+            link.classList.add("text-accent-700");
+          }
+        });
       } else {
         navbar.classList.remove("bg-neutral-50/95", "backdrop-blur-sm", "shadow-md");
+        navbar.classList.add("bg-black/30", "backdrop-blur-md", "md:bg-transparent", "md:backdrop-blur-none");
+        mobileMenuDiv.classList.remove("bg-neutral-50/95", "backdrop-blur-sm", "border-neutral-200");
+        mobileMenuDiv.classList.add("bg-white/20", "backdrop-blur-lg", "border-t", "border-white/20");
+        
+        // Restaurar color del botón móvil
+        mobileMenuButton.classList.remove("text-accent-700", "hover:text-primary-600");
+        mobileMenuButton.classList.add("text-white", "hover:text-neutral-100");
+        
         // Restaurar colores transparentes
         const logo = navbar.querySelector("a[href='/']");
-        const links = navbar.querySelectorAll("a:not([href='/'])");
+        const desktopLinks = navbar.querySelectorAll(".hidden.md\\:flex a");
+        const mobileLinks = mobileMenuDiv.querySelectorAll("a");
         
         if (logo) {
           logo.classList.remove("text-accent-700", "hover:text-primary-600");
           logo.classList.add("text-white", "hover:text-neutral-100");
         }
         
-        links.forEach((link) => {
+        desktopLinks.forEach((link) => {
           if (link.classList.contains("bg-primary-500")) {
-            // Botón de reservar
-            link.classList.remove("bg-primary-500", "hover:bg-primary-600");
+            link.classList.remove("bg-primary-500", "hover:bg-primary-600", "border-primary-500");
             link.classList.add("bg-white/20", "border-white", "text-white", "hover:bg-white/30");
           } else {
-            // Links normales
             link.classList.remove("text-accent-700", "hover:text-primary-600");
             link.classList.add("text-white", "hover:text-neutral-100");
           }
         });
+        
+        // Restaurar colores del menú móvil
+        mobileLinks.forEach((link, index) => {
+          if (index === mobileLinks.length - 1) {
+            // Botón de reservar
+            link.classList.remove("bg-primary-500", "hover:bg-primary-600", "border-primary-500");
+            link.classList.add("bg-white/20", "border-2", "border-white", "text-white", "hover:bg-white/30");
+          } else {
+            // Links normales
+            link.classList.remove("text-accent-700");
+            link.classList.add("text-white");
+          }
+        });
       }
-    });
+    };
+    
+    // Ejecutar al cargar la página
+    updateNavbarStyles();
+    
+    // Ejecutar al hacer scroll
+    window.addEventListener("scroll", updateNavbarStyles);
   }
 </script>

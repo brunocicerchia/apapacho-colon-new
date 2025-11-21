@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Smooth scroll para toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fallback para navegadores que no respeten scroll-behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @theme {
   /* Paleta de colores personalizada para Apapacho Colón */
 
