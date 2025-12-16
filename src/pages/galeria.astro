@@ -5,85 +5,108 @@ import HeaderVideo from "../components/HeaderVideo.astro";
 import Contacto from "../components/Contacto.astro";
 import { Image } from "astro:assets";
 
-// Importar imágenes de cabañas
-import cabana1 from "../assets/galeria/cabaña/IMG_2079.webp";
-import cabana2 from "../assets/galeria/cabaña/IMG_2082.webp";
-import cabana3 from "../assets/galeria/cabaña/IMG_2087.webp";
-import cabana4 from "../assets/galeria/cabaña/IMG_2088.webp";
+// Importar imágenes de cabaña
+import cabana1 from "../assets/cabaña/DJI_0278.webp";
+import cabana2 from "../assets/cabaña/IMG_2055_INTERMEDIO.webp";
+import cabana3 from "../assets/cabaña/IMG_2064_INTERMEDIO.webp";
+import cabana4 from "../assets/cabaña/IMG_2078_INTERMEDIO.webp";
+import cabana5 from "../assets/cabaña/IMG_2079_INTERMEDIO.webp";
+import cabana6 from "../assets/cabaña/IMG_2086_INTERMEDIO.webp";
+import cabana7 from "../assets/cabaña/IMG_2089_INTERMEDIO.webp";
+import cabana8 from "../assets/cabaña/IMG_2091_INTERMEDIO.webp";
+import cabana9 from "../assets/cabaña/IMG_2099_INTERMEDIO.webp";
+import cabana10 from "../assets/cabaña/IMG_8836_INTERMEDIO.webp";
+import cabana11 from "../assets/cabaña/IMG_8839_INTERMEDIO.webp";
+import cabana12 from "../assets/cabaña/IMG_8841_INTERMEDIO.webp";
+import cabana13 from "../assets/cabaña/IMG_8844_INTERMEDIO.webp";
+import cabana14 from "../assets/cabaña/IMG_8845_INTERMEDIO.webp";
+import cabana15 from "../assets/cabaña/IMG_8846_INTERMEDIO.webp";
+import cabana16 from "../assets/cabaña/IMG_8848_INTERMEDIO.webp";
+import cabana17 from "../assets/cabaña/IMG_8877_INTERMEDIO.webp";
+import cabana18 from "../assets/cabaña/IMG_8878_INTERMEDIO.webp";
+import cabana19 from "../assets/cabaña/IMG_8884_INTERMEDIO.webp";
+import cabana20 from "../assets/cabaña/IMG_8888_INTERMEDIO.webp";
+import cabana21 from "../assets/cabaña/IMG_8890_INTERMEDIO.webp";
 
-// Importar imágenes de comodidades
-import comodidad1 from "../assets/galeria/comodidades/IMG_2045_resultado.webp";
-import comodidad2 from "../assets/galeria/comodidades/IMG_2046_resultado.webp";
-import comodidad3 from "../assets/galeria/comodidades/IMG_2057_resultado.webp";
-import comodidad4 from "../assets/galeria/comodidades/IMG_2061_resultado.webp";
-import comodidad5 from "../assets/galeria/comodidades/IMG_2062_resultado.webp";
-import comodidad6 from "../assets/galeria/comodidades/IMG_2063_resultado.webp";
-import comodidad7 from "../assets/galeria/comodidades/IMG_2064_resultado.webp";
-import comodidad8 from "../assets/galeria/comodidades/IMG_2066_resultado.webp";
-import comodidad9 from "../assets/galeria/comodidades/IMG_2074_resultado.webp";
-import comodidad10 from "../assets/galeria/comodidades/IMG_2076_resultado.webp";
+// Importar imágenes de predio
+import predio1 from "../assets/predio/IMG_2046_INTERMEDIO.webp";
+import predio2 from "../assets/predio/IMG_2056_INTERMEDIO.webp";
+import predio3 from "../assets/predio/IMG_2058_INTERMEDIO.webp";
+import predio4 from "../assets/predio/IMG_2061_INTERMEDIO.webp";
+import predio5 from "../assets/predio/IMG_2066_INTERMEDIO.webp";
+import predio6 from "../assets/predio/IMG_2068_INTERMEDIO.webp";
+import predio7 from "../assets/predio/IMG_2077_INTERMEDIO.webp";
+import predio8 from "../assets/predio/IMG_8747.webp";
+import predio9 from "../assets/predio/IMG_8765_INTERMEDIO.webp";
+import predio10 from "../assets/predio/IMG_8773_INTERMEDIO.webp";
+import predio11 from "../assets/predio/IMG_8774_INTERMEDIO.webp";
+import predio12 from "../assets/predio/IMG_8794_INTERMEDIO.webp";
+import predio13 from "../assets/predio/IMG_8795_INTERMEDIO.webp";
+import predio14 from "../assets/predio/IMG_8796_INTERMEDIO.webp";
+import predio15 from "../assets/predio/IMG_8819_INTERMEDIO.webp";
+import predio16 from "../assets/predio/IMG_8821_INTERMEDIO.webp";
+import predio17 from "../assets/predio/IMG_8826_INTERMEDIO.webp";
+import predio18 from "../assets/predio/IMG_8834_INTERMEDIO.webp";
+import predio19 from "../assets/predio/IMG_8891_INTERMEDIO.webp";
 
 // Galería de Cabañas
 const cabanasImages = [
-  {
-    src: cabana1,
-    alt: "Cabaña - Vista exterior",
-  },
-  {
-    src: cabana2,
-    alt: "Cabaña - Detalle arquitectónico",
-  },
-  {
-    src: cabana3,
-    alt: "Cabaña - Área común",
-  },
-  {
-    src: cabana4,
-    alt: "Cabaña - Interior",
-  },
+  { src: cabana1, alt: "Vista aérea de las cabañas" },
+  { src: cabana2, alt: "Cabaña - Exterior" },
+  { src: cabana3, alt: "Cabaña - Detalle" },
+  { src: cabana4, alt: "Cabaña - Vista frontal" },
+  { src: cabana5, alt: "Cabaña - Terraza" },
+  { src: cabana6, alt: "Cabaña - Interior acogedor" },
+  { src: cabana7, alt: "Cabaña - Área de descanso" },
+  { src: cabana8, alt: "Cabaña - Habitación" },
+  { src: cabana9, alt: "Cabaña - Espacios" },
+  { src: cabana10, alt: "Cabaña - Vista exterior" },
+  { src: cabana11, alt: "Cabaña - Entrada" },
+  { src: cabana12, alt: "Cabaña - Detalles arquitectónicos" },
+  { src: cabana13, alt: "Cabaña - Ambiente" },
+  { src: cabana14, alt: "Cabaña - Comodidades" },
+  { src: cabana15, alt: "Cabaña - Decoración" },
+  { src: cabana16, alt: "Cabaña - Sala" },
+  { src: cabana17, alt: "Cabaña - Noche" },
+  { src: cabana18, alt: "Cabaña - Iluminación" },
+  { src: cabana19, alt: "Cabaña - Rincón especial" },
+  { src: cabana20, alt: "Cabaña - Vista panorámica" },
+  { src: cabana21, alt: "Cabaña - Atardecer" },
 ];
 
-// Galería de Comodidades
-const comodidadesImages = [
+// Galería del Predio
+const predioImages = [
+  { src: predio1, alt: "Predio - Jardines" },
+  { src: predio2, alt: "Predio - Áreas verdes" },
+  { src: predio3, alt: "Predio - Senderos" },
+  { src: predio4, alt: "Predio - Naturaleza" },
+  { src: predio5, alt: "Predio - Espacios al aire libre" },
+  { src: predio6, alt: "Predio - Zona de recreación" },
+  { src: predio7, alt: "Predio - Paisaje" },
+  { src: predio8, alt: "Predio - Vista general" },
+  { src: predio9, alt: "Predio - Vegetación" },
+  { src: predio10, alt: "Predio - Ambiente natural" },
+  { src: predio11, alt: "Predio - Entorno" },
+  { src: predio12, alt: "Predio - Áreas comunes" },
+  { src: predio13, alt: "Predio - Instalaciones" },
+  { src: predio14, alt: "Predio - Servicios" },
+  { src: predio15, alt: "Predio - Noche" },
+  { src: predio16, alt: "Predio - Iluminación nocturna" },
+  { src: predio17, alt: "Predio - Atardecer" },
+  { src: predio18, alt: "Predio - Vista especial" },
+  { src: predio19, alt: "Predio - Panorámica" },
+];
+
+// Videos de la galería
+const videos = [
   {
-    src: comodidad1,
-    alt: "Instalaciones y servicios",
-  },
-  {
-    src: comodidad2,
-    alt: "Áreas de recreación",
-  },
-  {
-    src: comodidad3,
-    alt: "Espacios exteriores",
-  },
-  {
-    src: comodidad4,
-    alt: "Zona de descanso",
-  },
-  {
-    src: comodidad5,
-    alt: "Amenidades del complejo",
-  },
-  {
-    src: comodidad6,
-    alt: "Servicios disponibles",
-  },
-  {
-    src: comodidad7,
-    alt: "Áreas comunes",
-  },
-  {
-    src: comodidad8,
-    alt: "Instalaciones recreativas",
-  },
-  {
-    src: comodidad9,
-    alt: "Espacios de convivencia",
-  },
-  {
-    src: comodidad10,
-    alt: "Entorno y naturaleza",
+    id: "video-cabana-interior",
+    title: "Tour Interior de Cabañas",
+    poster: cabana6,
+    sources: [
+      { src: "/videos/video1080_optimizado6k.webm", type: "video/webm" },
+      { src: "/videos/video1080_optimizado6k.mp4", type: "video/mp4" },
+    ],
   },
 ];
 ---
@@ -92,7 +115,11 @@ const comodidadesImages = [
   <HeaderVideo />
 
   <!-- Contenido principal -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="galery"  style="scroll-margin-top: 5rem;">
+  <main
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+    id="galery"
+    style="scroll-margin-top: 5rem;"
+  >
     <!-- Título General -->
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-5xl font-bold text-accent-700 mb-4">
@@ -117,56 +144,138 @@ const comodidadesImages = [
       <div class="max-w-4xl mx-auto">
         <!-- Slider Principal de Cabañas -->
         <div class="mb-6">
-          <div id="gallery-cabanas-container" class="swiper gallery-cabanas-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
+          <div
+            id="gallery-cabanas-container"
+            class="swiper gallery-cabanas-main relative rounded-lg overflow-hidden"
+            style="aspect-ratio: 3/2;"
+          >
             <!-- Botón de pantalla completa -->
             <button
               class="fullscreen-btn-cabanas absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
               aria-label="Pantalla completa"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                ></path>
               </svg>
             </button>
-            
+
             <div class="swiper-wrapper">
+              {
+                cabanasImages.map((image) => (
+                  <div class="swiper-slide">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      class="w-full h-full object-cover"
+                      widths={[600, 900, 1200]}
+                      sizes="(max-width: 768px) 100vw, 1200px"
+                    />
+                  </div>
+                ))
+              }
+              {/* Video integrado en el slider */}
+              {
+                videos.map((video) => (
+                  <div class="swiper-slide video-slide">
+                    <div class="video-container w-full h-full relative bg-black">
+                      <video
+                        id={video.id}
+                        class="w-full h-full object-cover"
+                        poster={
+                          typeof video.poster === "object"
+                            ? video.poster.src
+                            : video.poster
+                        }
+                        preload="none"
+                        playsinline
+                        controls
+                      >
+                        {video.sources.map((source) => (
+                          <source src={source.src} type={source.type} />
+                        ))}
+                        Tu navegador no soporta videos HTML5.
+                      </video>
+                      <div class="video-overlay absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity cursor-pointer">
+                        <button class="play-btn w-16 h-16 md:w-20 md:h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all">
+                          <svg
+                            class="w-8 h-8 md:w-10 md:h-10 text-accent-700 ml-1"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="swiper-button-next !hidden md:!flex"></div>
+            <div class="swiper-button-prev !hidden md:!flex"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- Thumbnails de Cabañas -->
+        <div class="swiper gallery-cabanas-thumbs">
+          <div class="swiper-wrapper">
             {
               cabanasImages.map((image) => (
-                <div class="swiper-slide">
+                <div
+                  class="swiper-slide cursor-pointer"
+                  style="aspect-ratio: 3/2;"
+                >
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    class="w-full h-full object-cover"
-                    widths={[600, 900, 1200]}
-                    sizes="(max-width: 768px) 100vw, 1200px"
+                    class="w-full h-full object-cover rounded-lg"
+                    widths={[150, 200]}
+                    sizes="150px"
                   />
                 </div>
               ))
             }
+            {/* Thumbnail para videos */}
+            {
+              videos.map((video) => (
+                <div
+                  class="swiper-slide cursor-pointer relative"
+                  style="aspect-ratio: 3/2;"
+                >
+                  <Image
+                    src={video.poster}
+                    alt={video.title}
+                    class="w-full h-full object-cover rounded-lg"
+                    widths={[150, 200]}
+                    sizes="150px"
+                  />
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-8 h-8 bg-white/80 rounded-full flex items-center justify-center">
+                      <svg
+                        class="w-4 h-4 text-accent-700 ml-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
           </div>
-          <div class="swiper-button-next !hidden md:!flex"></div>
-          <div class="swiper-button-prev !hidden md:!flex"></div>
-          <div class="swiper-pagination"></div>
         </div>
-      </div>
-
-      <!-- Thumbnails de Cabañas -->
-      <div class="swiper gallery-cabanas-thumbs">
-        <div class="swiper-wrapper">
-          {
-            cabanasImages.map((image) => (
-              <div class="swiper-slide cursor-pointer" style="aspect-ratio: 3/2;">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  class="w-full h-full object-cover rounded-lg"
-                  widths={[150, 200]}
-                  sizes="150px"
-                />
-              </div>
-            ))
-          }
-        </div>
-      </div>
       </div>
     </section>
 
@@ -184,56 +293,75 @@ const comodidadesImages = [
       <div class="max-w-4xl mx-auto">
         <!-- Slider Principal de Comodidades -->
         <div class="mb-6">
-          <div id="gallery-comodidades-container" class="swiper gallery-comodidades-main relative rounded-lg overflow-hidden" style="aspect-ratio: 3/2;">
+          <div
+            id="gallery-comodidades-container"
+            class="swiper gallery-comodidades-main relative rounded-lg overflow-hidden"
+            style="aspect-ratio: 3/2;"
+          >
             <!-- Botón de pantalla completa -->
             <button
               class="fullscreen-btn-comodidades absolute top-4 right-4 z-20 bg-black/60 hover:bg-black/80 backdrop-blur-sm text-white p-2 rounded-lg transition-all"
               aria-label="Pantalla completa"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                ></path>
               </svg>
             </button>
-            
+
             <div class="swiper-wrapper">
+              {
+                predioImages.map((image) => (
+                  <div class="swiper-slide">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      class="w-full h-full object-cover"
+                      widths={[600, 900, 1200]}
+                      sizes="(max-width: 768px) 100vw, 1200px"
+                      loading="lazy"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+            <div class="swiper-button-next !hidden md:!flex"></div>
+            <div class="swiper-button-prev !hidden md:!flex"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- Thumbnails de Comodidades -->
+        <div class="swiper gallery-comodidades-thumbs">
+          <div class="swiper-wrapper">
             {
-              comodidadesImages.map((image) => (
-                <div class="swiper-slide">
+              predioImages.map((image) => (
+                <div
+                  class="swiper-slide cursor-pointer"
+                  style="aspect-ratio: 3/2;"
+                >
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    class="w-full h-full object-cover"
-                    widths={[600, 900, 1200]}
-                    sizes="(max-width: 768px) 100vw, 1200px"
+                    class="w-full h-full object-cover rounded-lg"
+                    widths={[150, 200]}
+                    sizes="150px"
+                    loading="lazy"
                   />
                 </div>
               ))
             }
           </div>
-          <div class="swiper-button-next !hidden md:!flex"></div>
-          <div class="swiper-button-prev !hidden md:!flex"></div>
-          <div class="swiper-pagination"></div>
         </div>
-      </div>
-
-      <!-- Thumbnails de Comodidades -->
-      <div class="swiper gallery-comodidades-thumbs">
-        <div class="swiper-wrapper">
-          {
-            comodidadesImages.map((image) => (
-              <div class="swiper-slide cursor-pointer" style="aspect-ratio: 3/2;">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  class="w-full h-full object-cover rounded-lg"
-                  widths={[150, 200]}
-                  sizes="150px"
-                />
-              </div>
-            ))
-          }
-        </div>
-      </div>
       </div>
     </section>
 
@@ -420,7 +548,8 @@ const comodidadesImages = [
 
   /* Ocultar thumbnails en pantalla completa */
   :global(#gallery-cabanas-container:fullscreen) ~ .gallery-cabanas-thumbs,
-  :global(#gallery-comodidades-container:fullscreen) ~ .gallery-comodidades-thumbs {
+  :global(#gallery-comodidades-container:fullscreen)
+    ~ .gallery-comodidades-thumbs {
     display: none;
   }
 
@@ -429,11 +558,93 @@ const comodidadesImages = [
   .fullscreen-btn-comodidades.fullscreen-active svg {
     transform: rotate(45deg);
   }
+
+  /* ========== ESTILOS DE VIDEO ========== */
+  .video-container {
+    position: relative;
+  }
+
+  .video-container video {
+    display: block;
+  }
+
+  .video-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  .video-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .video-container:hover .video-overlay:not(.hidden) {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* Responsive video */
+  @media (max-width: 640px) {
+    .video-overlay .play-btn {
+      width: 64px;
+      height: 64px;
+    }
+
+    .video-overlay .play-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
 </style>
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination, Thumbs } from "swiper/modules";
+  import { Navigation, Pagination, Thumbs, Keyboard } from "swiper/modules";
+
+  // ========== FUNCIONALIDAD DE VIDEOS ==========
+  document.querySelectorAll(".video-container").forEach((container) => {
+    const video = container.querySelector("video") as HTMLVideoElement;
+    const overlay = container.querySelector(".video-overlay") as HTMLElement;
+    const playBtn = container.querySelector(".play-btn") as HTMLButtonElement;
+
+    if (video && overlay && playBtn) {
+      // Click en overlay o botón de play
+      const handlePlay = () => {
+        video.play();
+        overlay.classList.add("hidden");
+      };
+
+      playBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        handlePlay();
+      });
+
+      overlay.addEventListener("click", handlePlay);
+
+      // Cuando el video termina o se pausa
+      video.addEventListener("pause", () => {
+        overlay.classList.remove("hidden");
+      });
+
+      video.addEventListener("ended", () => {
+        overlay.classList.remove("hidden");
+      });
+
+      // Intersection Observer para pausar videos fuera de vista (optimización mobile)
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting && !video.paused) {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(container);
+    }
+  });
 
   // ========== GALERÍA DE CABAÑAS ==========
   const cabanasGalleryThumbs = new Swiper(".gallery-cabanas-thumbs", {
@@ -455,7 +666,7 @@ const comodidadesImages = [
   });
 
   const cabanasMainSwiper = new Swiper(".gallery-cabanas-main", {
-    modules: [Navigation, Pagination, Thumbs],
+    modules: [Navigation, Pagination, Thumbs, Keyboard],
     spaceBetween: 10,
     slidesPerView: 1,
     centeredSlides: true,
@@ -478,8 +689,12 @@ const comodidadesImages = [
   });
 
   // Funcionalidad de pantalla completa para Cabañas
-  const fullscreenBtnCabanas = document.querySelector(".fullscreen-btn-cabanas");
-  const galleryContainerCabanas = document.getElementById("gallery-cabanas-container");
+  const fullscreenBtnCabanas = document.querySelector(
+    ".fullscreen-btn-cabanas"
+  );
+  const galleryContainerCabanas = document.getElementById(
+    "gallery-cabanas-container"
+  );
 
   if (fullscreenBtnCabanas && galleryContainerCabanas) {
     fullscreenBtnCabanas.addEventListener("click", () => {
@@ -499,7 +714,10 @@ const comodidadesImages = [
         cabanasMainSwiper.params.spaceBetween = 30;
         cabanasMainSwiper.params.centeredSlides = true;
         cabanasMainSwiper.update();
-      } else if (!document.fullscreenElement) {
+      } else if (
+        !document.fullscreenElement &&
+        fullscreenBtnCabanas.classList.contains("fullscreen-active")
+      ) {
         fullscreenBtnCabanas.classList.remove("fullscreen-active");
         cabanasMainSwiper.params.slidesPerView = 1;
         cabanasMainSwiper.params.spaceBetween = 10;
@@ -529,7 +747,7 @@ const comodidadesImages = [
   });
 
   const comodidadesMainSwiper = new Swiper(".gallery-comodidades-main", {
-    modules: [Navigation, Pagination, Thumbs],
+    modules: [Navigation, Pagination, Thumbs, Keyboard],
     spaceBetween: 10,
     slidesPerView: 1,
     centeredSlides: true,
@@ -552,8 +770,12 @@ const comodidadesImages = [
   });
 
   // Funcionalidad de pantalla completa para Comodidades
-  const fullscreenBtnComodidades = document.querySelector(".fullscreen-btn-comodidades");
-  const galleryContainerComodidades = document.getElementById("gallery-comodidades-container");
+  const fullscreenBtnComodidades = document.querySelector(
+    ".fullscreen-btn-comodidades"
+  );
+  const galleryContainerComodidades = document.getElementById(
+    "gallery-comodidades-container"
+  );
 
   if (fullscreenBtnComodidades && galleryContainerComodidades) {
     fullscreenBtnComodidades.addEventListener("click", () => {
@@ -573,7 +795,10 @@ const comodidadesImages = [
         comodidadesMainSwiper.params.spaceBetween = 30;
         comodidadesMainSwiper.params.centeredSlides = true;
         comodidadesMainSwiper.update();
-      } else if (!document.fullscreenElement) {
+      } else if (
+        !document.fullscreenElement &&
+        fullscreenBtnComodidades.classList.contains("fullscreen-active")
+      ) {
         fullscreenBtnComodidades.classList.remove("fullscreen-active");
         comodidadesMainSwiper.params.slidesPerView = 1;
         comodidadesMainSwiper.params.spaceBetween = 10;
